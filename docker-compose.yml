@@ -5,6 +5,8 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - ./wireguard:/etc/wireguard
     ports:
       - "80:80"
       - "443:443"
