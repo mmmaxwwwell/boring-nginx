@@ -1,0 +1,14 @@
+version: '3'
+services: 
+  nginx: 
+    image: mmmaxwwwell/boring-nginx:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - "/dev/net/tun:/dev/net/tun"
